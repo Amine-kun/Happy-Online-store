@@ -1,0 +1,21 @@
+.spinner-main-div{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.spinner-main{
+	-webkit-animation: rotation 2s infinite linear;
+	height: auto;
+	width: 30px;
+}
+
+@keyframes rotation {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(359deg);
+		}
+}

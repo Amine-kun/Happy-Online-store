@@ -1,0 +1,54 @@
+.RequiredLogin-main{
+	height: 100vh;
+	width: 100vw;
+	background-color: #4a4a4abd;
+	position: fixed;
+	top: 0;
+	z-index: 10;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.RequiredLogin-div{
+	height: 40%;
+	width: 40%;
+	background-color: #f6f7fb;
+	border: 2px solid #232323;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.btn-set{
+	border: none;
+	font-weight: bold;
+	font-size: 15px;
+	background-color: red;
+	height: 50px;
+	width: 45%;
+	cursor: pointer;
+}
+.btn-1{
+	background-color: #232323;
+	color: #f6f7fb;
+}
+.btn-2{
+	background-color: #f6f7fb;
+	color: #232323;
+	border: 2px solid #232323;
+}
+.btn-2:hover{
+	background-color: #232323;
+	color: #f6f7fb;
+}
+.back-div{
+	height: 30px;
+	width: 100%;
+	text-align: center;
+	background-color: #232323;
+	color: #f6f7fb;
+	font-weight: bold;
+	margin-top: 20px;
+}

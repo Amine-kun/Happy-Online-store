@@ -1,0 +1,97 @@
+.sidebar-main{
+	position: fixed;
+	top: 0;
+	left: -5000px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 30%;
+	height: 100vh;
+	background-color: #f6f7fb;
+	box-shadow: -8px -1px 21px -1px black;
+	transition: 500ms;
+	border-right: 1px solid #232323;
+	z-index: 5;
+	gap: 20px;
+	overflow-x: scroll;
+}
+.active-sidebar{
+	left: 0;
+}
+
+@media (max-width:  850px){
+	.sidebar-main{
+		width: 100%;
+	}
+}
+
+
+
+.pointer{
+	cursor: pointer;
+}
+
+.header-icons-sidebare{
+	margin: 0px 30px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 50px;
+	font-size: 22px;
+}
+.searchbtn{
+	transition: 400ms;
+}
+
+.activeBasket{
+	  background-color: #232323;
+    color: #f6f7fb;
+    padding: 8px 8px 8px 7px;
+    border-radius: 20px;
+}
+
+.logout-btn{
+	border: none;
+	background-color: white;
+	border: 1px solid #232323;
+	width: 85%;
+	font-weight: bold;
+	font-size: 15px;
+	padding: 10px 0;
+	cursor: pointer;
+}
+.logout-btn:hover{
+	background-color: #232323;
+	color: #f6f7fb;
+}
+/*categories*/
+
+.side-categorie{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	width: 100%;
+}
+.side-categories-div{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	width: 100%;
+}
+.side-single-category{
+	display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    justify-content: flex-start;
+    font-weight: bold;
+    color: #232323;
+    width: 85%;
+    padding: 15px 15px;
+    cursor: pointer;
+}

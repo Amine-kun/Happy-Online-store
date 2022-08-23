@@ -1,0 +1,46 @@
+.carousel {
+  overflow: hidden;
+}
+
+.inner {
+  white-space: nowrap;
+  transition: transform 0.3s;
+}
+
+.carousel-item {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  background-color: #f6f7fb;
+  color: #fff;
+
+}
+
+.indicators {
+  display: flex;
+  justify-content: center;
+}
+
+.indicators > button {
+  border: none;
+  border: 1px solid #232323;
+  margin: 5px;
+  height: 15px;
+  width: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.indicators > button.active {
+  background-color: #232323;
+  color: #f6f7fb;
+}
+.arrow{
+  height: auto;
+  width: 20px;
+  cursor: pointer;
+  color:  #232323;
+  margin: 0px 20px;
+}

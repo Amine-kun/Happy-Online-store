@@ -1,0 +1,144 @@
+.pointer{
+	cursor: pointer;
+}
+
+.navbar-main{
+	display: flex;
+	align-items: center;
+	width: 100vw;
+	background-color: #f6f7fb;
+}
+
+.navbar-div{
+	display: flex;
+	align-items: center;
+	align-items: center;
+	width: 100%;
+}
+
+.sideMenu-icon{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+	background-color: #232323;
+	padding: 27px 30px;
+	cursor: pointer;
+}
+.span{
+	height: 3px;
+	width: 25px;
+	background-color: #f6f7fb;
+	border-radius: 50px;
+}
+.span2{
+ width: 20px;
+ align-self: flex-start;
+}
+
+.logo{
+	font-weight: bold;
+	font-size: 30px !important;
+	color: #232323;
+	margin: 0;
+	margin: 0px 20px;
+}
+
+.wrapper{
+ 	display: flex;
+ 	flex-direction: row;
+ 	justify-content: center;
+ 	align-items: center;
+ 	margin-left: auto;
+}
+.header-icons{
+	margin: 0px 30px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	font-size: 22px;
+}
+
+.cart{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.cart-items{
+	position: absolute;
+    right: -8px;
+    top: -8px;
+    color: white;
+    background: red;
+    border-radius: 50%;
+    margin: 0;
+    padding: 2px 6px;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.searchbtn{
+	transition: 400ms;
+}
+
+.login-btns{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
+	background-color: #232323;
+	color: #f6f7fb;
+	padding: 10px 30px;
+	font-weight: bold;
+}
+.user-nav{
+	padding: 0px ;
+	height: 73px;
+	width: 93px;
+	background-color: #232323;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.userImage{
+	border-radius: 200px;
+	background-color: white;
+	height: 40px;
+	border: 2px solid #f6f7fb;
+	cursor: pointer;
+}
+.onUser-features{
+	display: flex;
+	flex-direction: row;
+	height: auto;
+	width: auto;
+	justify-content: center;
+	align-items: center;
+	gap: 22px;
+}
+.bar{
+	height: 20px;
+	width: 1px;
+	background-color: #f6f7fb;
+}
+
+.activeBasket{
+	  background-color: #232323;
+    color: #f6f7fb;
+    padding: 8px 8px 8px 7px;
+    border-radius: 20px;
+}
+
+
+@media (max-width: 850px){
+	.header-icons{
+		display: none;
+	}
+	.logo{
+		margin-left: auto;
+	}
+}

@@ -1,0 +1,88 @@
+.profile-main{
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	background-color: white;
+}
+.user-info{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: grey;
+	gap: 10px;
+	border-bottom: 1px solid #ebebec;
+	padding-bottom: 15px;
+}
+.cover{
+	width: 100%;
+	height: 300px;
+	object-fit: cover;
+}
+.user-pp{
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	margin-top: -80px;
+	background-color: white;
+	padding: 5px;
+	object-fit: cover;
+}
+.user-more-info{
+	width: 350px;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+.username{
+	margin: 0;
+	font-weight: bold;
+	font-size: 25px;
+	color: #232323 !important;
+}
+.Boldtext{
+	margin: 0;
+	font-weight: bold;
+	font-size: 15px;
+}
+.text-set{
+	margin: 0;
+}
+.btns{
+	font-weight: bold;
+	cursor: pointer;
+	padding: 8px 20px;
+}
+.btns:hover{
+	background-color: #232323;
+	color: #f6f7fb;
+}
+.btnsActive{
+	background-color: #232323;
+	color: #f6f7fb;
+}
+
+.profile-header{
+	width: 100%;
+	padding: 8px 0px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	border-bottom: 1px solid #ebebec;
+}
+.user-items{
+	padding: 20px 15px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 10px;
+}

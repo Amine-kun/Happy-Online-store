@@ -1,0 +1,61 @@
+.main{
+
+}
+
+.carousel-items{
+	width: 40%;
+	object-fit: cover;
+	border: 1px solid black;
+	padding: 10px;
+}
+.item{
+	padding: 10px;
+	height: 500px;
+	width: 85.8%;
+	display: flex;
+	flex-direction: row;
+	background-color: white;
+}
+.carousel{
+	/*margin: 10px 0px;*/
+}
+
+.text{
+	color: #232323;
+}
+.elems{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+.title{
+	font-size: 70px;
+	font-weight: bold;
+	margin: 0;
+}
+.description{
+	margin: 0;
+}
+.shop-btn{
+	padding: 10px 15px ;
+	color: black;
+	background-color: #f6f7fb;
+	border: none;
+	border: 1px solid #232323;
+	cursor: pointer;	
+	font-weight: bold;
+	margin: 20px 0px;
+}
+.shop-btn:hover{
+	background-color: #232323;
+	color: white;
+}
+
+@media (max-width: 850px){
+	.carousel-items{
+		width: unset ;
+		height: 250px;
+	}
+}
