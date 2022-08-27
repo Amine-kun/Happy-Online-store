@@ -12,7 +12,7 @@ import Spinner from '../Spinner/Spinner';
  const mockObj = [{
       image:'https://image.posterlounge.com/images/l/1884772.jpg',
       key:'1',
-      title:'Winnter 22s Fashion',
+      title:'Winnter 22s',
       desc1:'Discover the latest fashion in the market',
       desc2:'Winter layer season is NOW here. ',
     },{
@@ -85,7 +85,62 @@ const Landing =({activeBtn, setActiveBtn})=> {
                           }
         </div>
 
-        <div className="newsletter-section">
+         <div className='features'>
+            <h3>Stay In Trend With HAPPY.</h3>
+                  <div className='sub-features-div'>
+                          <div className='sub-features'>
+                              <h2 className='bold'>Latest Styles</h2>
+                              <p>Our designs follow the latest faashion
+                                styles to help you stay updated with new 
+                                trends
+                              </p>
+                              <p className='bold'>Read More</p>
+                          </div>
+                          <div className='sub-features'>
+                            <h2 className='bold'>Latest Styles</h2>
+                                <p>Our designs follow the latest faashion
+                                  styles to help you stay updated with new 
+                                  trends
+                                </p>
+                                <p className='bold'>Read More</p>
+                          </div>
+                          <div className='sub-features'>
+                            <h2 className='bold'>Latest Styles</h2>
+                                <p>Our designs follow the latest faashion
+                                  styles to help you stay updated with new 
+                                  trends
+                                </p>
+                                <p className='bold'>Read More</p>
+                          </div>
+                  </div>
+         </div>
+         
+          <div className='wrap'>
+            <div className='news'>
+            <div className='sub-features'>
+                      <h2 className='bold'>The Black Beauty</h2>
+                                  <p>Our designs follow the latest faashion
+                                    styles to help you stay updated with new 
+                                    trends
+                                  </p>
+                                  <p className='bold'>Read More</p>             
+            </div>
+            <img className='card-img' src='https://image.posterlounge.com/images/l/1884772.jpg'/>
+          </div>
+          <div className='news'>
+            <div className='sub-features'>
+                      <h2 className='bold'>The Black Beauty</h2>
+                                  <p>Our designs follow the latest faashion
+                                    styles to help you stay updated with new 
+                                    trends
+                                  </p>
+                                  <p className='bold'>Read More</p>             
+            </div>
+            <img className='card-img' src='https://image.posterlounge.com/images/l/1884772.jpg'/>
+          </div> 
+         </div>
+
+         <div className="newsletter-section">
            <p className="newsletter-section-headtitle">Reach us for weekly News letter</p>
             <div className="input-news-div">
               <input type="text" placeholder="Enter Your Email." className="input-news"/>

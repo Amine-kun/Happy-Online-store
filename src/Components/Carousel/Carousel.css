@@ -1,7 +1,17 @@
 .carousel {
   overflow: hidden;
+  width: 100%;
 }
-
+@media screen and (min-width:1800px){
+  .carousel{
+    width: 70%;
+  }
+}
+@media screen and (max-width:1000px){
+  .carousel{
+    padding-top: 20px;
+  }
+}
 .inner {
   white-space: nowrap;
   transition: transform 0.3s;
