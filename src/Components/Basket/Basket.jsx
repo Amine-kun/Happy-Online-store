@@ -107,9 +107,6 @@ const Basket =( {toggleBasket ,setToggleBasket} )=> {
       <div className="checkout-section">
         <p className="basket-text">ORDER SUMMARY</p>
           <span className="line"></span>
-        {/*<p className="basket-text checkout-details">Products price: <span className="price-cart">$225</span></p>
-        <p className="basket-text checkout-details">Shipping: <span className="price-cart">$25</span></p>
-        <p className="basket-text checkout-details">Discounts: <span className="price-cart">$-50</span></p>*/}
         <p className="basket-text checkout-details">Total: {total && <span className="price-cart">${total}</span>}</p>
         <StripeCheckout
             name="Happy-shop"

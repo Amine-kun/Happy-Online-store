@@ -104,29 +104,6 @@
  	cursor: pointer;
 }
 
-/* media --------------------- */
-
-@media (max-width: 850px){
-	.item{
-		flex-direction: column;
-		height: auto;
-	}
-	.description{
-		    font-size: 1rem;
-
-	}
-	.title{
-		font-size: 2rem;
-		padding: 10px 0;
-	}
-	.newsletter-section{
-		font-size: 2rem;
-	}
-	.features{
-		font-size: 1rem;
-	}
-}
-
 .features{
 	position: relative;
 	display: flex;
@@ -139,7 +116,7 @@
 	background-color: #232323;
 	color: #f6f7fb;
 	font-size: 2rem;
-	margin-bottom: 100px;
+	margin-bottom: 30px;
 	text-align: center;
 }
 .sub-features-div{
@@ -162,7 +139,7 @@
 	padding: 25px 40px;
 	background-color: white;
 	color: 	#232323;
-	;
+	gap:15px;
 }
 .bold{
 	font-weight: bold;
@@ -175,7 +152,7 @@
 	align-items: center;
 	flex-wrap: wrap;
 	gap: 15px;
-	margin-bottom: 100px;
+	margin-bottom: 30px;
 }
 .news{
 	width: 575px;
@@ -192,17 +169,89 @@
 	object-fit: cover;
 	border: 1px solid black;
 }
-/* media-------- */
-@media (min-width: 850px) and (max-width: 1200px){
-	.title{
-		font-size: 3rem;
-	}
+.icon{
+	width: 	40px;
+	height: auto;
+	margin-bottom: 10px;
 }
+
+.bottom-border__effect{
+	position: relative;
+	cursor: pointer;
+}
+.bottom-border__effect::before{
+	content: '';
+	position: absolute;
+	background-color: #232323;
+	width: 0;
+	height: 2px;
+	top: 25px;
+}
+.bottom-border__effect:hover::before{
+	width: 92px;
+	transition: all 0.4s ease-in-out;
+}
+
+.no-mg{
+	margin: 0;
+}
+
+
+
+
+/* media larger screens -------- */
 @media screen and (min-width:2000px){
 	.newsletter-section{
 		width: 60%;
 	}
 	.features{
 		width: 60%;
+	}
+}
+
+/* media phones --------------------- */
+
+@media (max-width: 850px){
+	.item{
+		flex-direction: column;
+		height: auto;
+	}
+	.description{
+		    font-size: 1rem;
+
+	}
+	.title{
+		font-size: 2rem;
+		padding: 10px 0;
+	}
+	.newsletter-section{
+		font-size: 2rem;
+	}
+	.features{
+		font-size: 1rem;
+	}
+	.sub-features{
+		height: 300px;
+		width: 229px;
+		padding: 5px 40px;
+	}
+	.news{
+		flex-direction: column;
+		flex-flow: column-reverse;
+		gap:0px;
+		padding: 15px 15px ;
+	}
+	.wrap{
+		width: 90%;
+	}
+	.card-img{
+		width: 100%;
+		margin-bottom: 5px;
+	}
+}
+
+@media (min-width: 850px) and (max-width: 1200px){
+	.title{
+		font-size: 3rem;
 	}
 }

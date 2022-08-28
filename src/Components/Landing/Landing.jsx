@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './Landing.css';
 
 import Carousel, { CarouselItem } from "../../Components/Carousel/Carousel";
-
+import {TbTruckDelivery, TbListSearch, TbCheckbox} from 'react-icons/tb';
 import Categories from './Categories';
 import Products from '../Products/Products';
 import Spinner from '../Spinner/Spinner';
@@ -20,13 +20,13 @@ import Spinner from '../Spinner/Spinner';
       key:'2',
       title:'Women Styles',
       desc1:'Minimalist outfits are HERE!',
-      desc2:'Check out our trendy new Minimalist outfits',
+      desc2:'Check out the new Minimalist outfits',
     },{
       image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV76IsQm7x3-CPtWkVeiAd7Uzk4neoX3pCoQ&usqp=CAU',
       key:'3',
       title:'Winter 22s',
       desc1:'Winter layer season is here. ',
-      desc2:'Check out our trendy new winter collection to stay warm in style',
+      desc2:'Check out our trendy new winter collection ',
     }]
 
 
@@ -89,28 +89,31 @@ const Landing =({activeBtn, setActiveBtn})=> {
             <h3>Stay In Trend With HAPPY.</h3>
                   <div className='sub-features-div'>
                           <div className='sub-features'>
-                              <h2 className='bold'>Latest Styles</h2>
-                              <p>Our designs follow the latest faashion
+                              <TbTruckDelivery  className="icon"/>
+                              <h2 className='bold' style={{margin:"0"}}>Latest Styles</h2>
+                              <p style={{margin:"0"}}>Our designs follow the latest faashion
                                 styles to help you stay updated with new 
                                 trends
                               </p>
-                              <p className='bold'>Read More</p>
+                              <p className='bold bottom-border__effect' >Read More</p>
                           </div>
                           <div className='sub-features'>
-                            <h2 className='bold'>Latest Styles</h2>
-                                <p>Our designs follow the latest faashion
+                              <TbListSearch className="icon"/>
+                            <h2 className='bold'  style={{margin:"0"}}>Latest Styles</h2>
+                                <p  style={{margin:"0"}}>Our designs follow the latest faashion
                                   styles to help you stay updated with new 
                                   trends
                                 </p>
-                                <p className='bold'>Read More</p>
+                                <p className='bold bottom-border__effect'  >Read More</p>
                           </div>
                           <div className='sub-features'>
-                            <h2 className='bold'>Latest Styles</h2>
-                                <p>Our designs follow the latest faashion
+                              <TbCheckbox className="icon"/>
+                            <h2 className='bold'  style={{margin:"0"}}>Latest Styles</h2>
+                                <p  style={{margin:"0"}}>Our designs follow the latest faashion
                                   styles to help you stay updated with new 
                                   trends
-                                </p>
-                                <p className='bold'>Read More</p>
+                                </p >
+                                <p className='bold bottom-border__effect'>Read More</p>
                           </div>
                   </div>
          </div>
@@ -118,25 +121,29 @@ const Landing =({activeBtn, setActiveBtn})=> {
           <div className='wrap'>
             <div className='news'>
             <div className='sub-features'>
-                      <h2 className='bold'>The Black Beauty</h2>
+                      <h2 className='bold no-mg'>The Black Beauty</h2>
                                   <p>Our designs follow the latest faashion
                                     styles to help you stay updated with new 
                                     trends
                                   </p>
-                                  <p className='bold'>Read More</p>             
+                                  <button className="text shop-btn">
+                                    Discover Now
+                                  </button>             
             </div>
-            <img className='card-img' src='https://image.posterlounge.com/images/l/1884772.jpg'/>
+            <img className='card-img' alt='pic' src='https://image.posterlounge.com/images/l/1884772.jpg'/>
           </div>
           <div className='news'>
             <div className='sub-features'>
-                      <h2 className='bold'>The Black Beauty</h2>
+                      <h2 className='bold no-mg'>The Black Beauty</h2>
                                   <p>Our designs follow the latest faashion
                                     styles to help you stay updated with new 
                                     trends
                                   </p>
-                                  <p className='bold'>Read More</p>             
+                                  <button className="text shop-btn" >
+                                    Discover Now
+                                  </button>             
             </div>
-            <img className='card-img' src='https://image.posterlounge.com/images/l/1884772.jpg'/>
+            <img className='card-img' alt='pic' src='https://image.posterlounge.com/images/l/1884772.jpg'/>
           </div> 
          </div>
 

@@ -42,7 +42,9 @@
     margin: 0px 10px;
     display: flex;
     flex-direction: column;
+	justify-content: center;
     gap: 10px;
+	text-align: center;
 
 }
 .checkout-section{
