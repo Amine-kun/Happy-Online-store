@@ -1,0 +1,44 @@
+.sender-p{
+	width: 50px;
+	height: 50px;
+	border-radius: 0.8rem;
+}
+
+.feedback{
+	display: flex;
+	flex-direction: column;
+	background-color: #f6f7fb;
+	border-radius: 1rem;
+	padding: 1rem;
+	gap: 1rem;
+	margin: 30px 0;
+	max-width: 300px;
+}
+.sender-info{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	align-self: flex-start;
+}
+.sendername{
+	font-size: 0.9rem;
+	font-weight: bold;
+	text-transform: capitalize;
+}
+.date{
+	font-size: 0.8rem;
+
+}
+.barV{
+	background-color: black;
+	height: 1px;
+	width: 100px;
+	margin-left: 10px;
+}
+.fbtitle{
+	align-self: flex-start;
+	font-weight: bold;
+	text-transform: uppercase;
+}
