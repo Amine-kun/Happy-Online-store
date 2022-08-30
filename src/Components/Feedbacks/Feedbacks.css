@@ -1,15 +1,15 @@
 .sender-p{
 	width: 50px;
 	height: 50px;
-	border-radius: 0.8rem;
+	border-radius: 5rem;
 }
 
 .feedback{
 	display: flex;
 	flex-direction: column;
 	background-color: #f6f7fb;
-	border-radius: 1rem;
-	padding: 1rem;
+	border-radius: 0.5rem;
+	padding: 1.5rem;
 	gap: 1rem;
 	margin: 30px 0;
 	max-width: 300px;
@@ -35,10 +35,16 @@
 	background-color: black;
 	height: 1px;
 	width: 100px;
-	margin-left: 10px;
+	margin: 10px 10px;
 }
 .fbtitle{
 	align-self: flex-start;
 	font-weight: bold;
 	text-transform: uppercase;
+}
+.stars{
+	color:orange;
+	font-size: 1.2rem;
+	display: flex;
+	flex-direction: row;
 }

@@ -1,12 +1,18 @@
 import React from 'react';
-import './Feedbacks.css'
+import './Feedbacks.css';
+
+import {AiFillStar} from 'react-icons/ai';
 
 const Feedbacks = ({feedback}) => {
+	
 	return (
 		<div className="feedback">
+				<div className="stars">
+					{[...Array(feedback.stars)].map((e,i)=> <AiFillStar key={i}/>)}
+				</div>
 
 				<p className="text-set fbtitle">{feedback.fbContent}</p>
-				<p className="text-set">I really liked this product and im gonna always fall back here when i want to buy it next time</p>
+				<p className="text-set">{feedback.fbText}</p>
 										
 						<span className="barV">
 						</span>			

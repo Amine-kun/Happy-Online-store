@@ -37,7 +37,6 @@ const Profile =()=> {
               } else if(path === 'Contact'){
                 setUserContacts(data);
               }
-              console.log(data);
             })
             .catch(err=>console.log("cant get user products"));
     }      
@@ -96,14 +95,14 @@ if (!user) return <Spinner/>
                               ))}
           </div>}
 
-        {/*{currentTab === "Contact"  && 
+        {currentTab === "Contact"  && 
          <div className="user-contacts">
             {!userContacts ? <Spinner/>
-                            : userProducts.map((userProduct)=>(
-                                    <Contact product={userProduct} key={userProduct._id}/>
+                            : userContacts.map((userContact)=>(
+                                    <Contact contact={userContact} key={userContact._id}/>
                               ))}
           </div>}
-*/}
+
     </div>
   );
 }
