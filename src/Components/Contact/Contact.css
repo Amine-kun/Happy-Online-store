@@ -5,6 +5,8 @@
 	align-items: center;
 	padding: 1.5rem;
 	width: 100vw;
+	max-height: 500px;
+	overflow-y: scroll;
 }
 .users__container{
 	background-color: #f6f7fb;
@@ -38,3 +40,14 @@
 .message{
 	color: grey;
 }
+
+@media screen and (max-width: 1000px){
+	.users__container{
+		width: 95%;
+	}
+	.contact__container{
+		max-height: auto;
+		overflow-y: hidden;
+	}
+}
+

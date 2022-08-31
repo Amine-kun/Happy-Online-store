@@ -75,10 +75,17 @@ if (!user) return <Spinner/>
           </div>
       </div>
       <div className="profile-header">
-        <p className={currentTab === "Products" ? "text-set btns btnsActive" : "text-set btns"} onClick={()=>setCurrentTab("Products")}>Products</p> 
-        <p className={currentTab === "Feedbacks" ? "text-set btns btnsActive" : "text-set btns"} onClick={()=>setCurrentTab("Feedbacks")}>Feedbacks</p>
-        <p className={currentTab === "Contact" ? "text-set btns btnsActive" : "text-set btns"} onClick={()=>setCurrentTab("Contact")}>Contact</p>
+        <p className={currentTab === "Products" ? "text-set btns btnsActive" : "text-set btns"} 
+            onClick={()=>setCurrentTab("Products")}>Products</p> 
+            
+        <p className={currentTab === "Feedbacks" ? "text-set btns btnsActive" : "text-set btns"} 
+            onClick={()=>setCurrentTab("Feedbacks")}>Feedbacks</p>
+            
+        <p className={currentTab === "Contact" ? "text-set btns btnsActive" : "text-set btns"} 
+            onClick={()=>setCurrentTab("Contact")}>Contact</p>
+            
       </div>
+
        {currentTab === "Products"  && 
          <div className="user-items">
             {!userProducts ? <Spinner/>

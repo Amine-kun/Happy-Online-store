@@ -1,0 +1,27 @@
+.convo__section{
+	transition: 300ms;
+	opacity: 0;
+	max-height: 400px;
+	overflow-y: scroll;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+.active__convo{
+	opacity: 1;
+}
+.msgs{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.left{
+	align-self: flex-start;
+}
+
+.right{
+	align-self: flex-end;
+}
