@@ -34,7 +34,7 @@ const Contact = ({contact}) => {
 				}
 
 				{isOpened && 
-					<Convo showConvo={showConvo} contact={contact}/>
+					<Convo showConvo={showConvo} contact={contact} setIsOpened={setIsOpened}/>
 				}
 				
 			</div>

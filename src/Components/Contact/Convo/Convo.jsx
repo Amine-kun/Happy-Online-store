@@ -1,12 +1,11 @@
 import React, {useState} from 'react';
 import './Convo.css';
 
-const Convo = ({showConvo, contact}) => {
+const Convo = ({showConvo, contact, setIsOpened}) => {
 
 	const [message, setMessage] = useState(null);
 	
 	const sendMessage = () =>{
-		console.log('sfsadfsadfsfsd')
 
 		 fetch('http://localhost:3001/user/conversation',{
               method:'post',
@@ -17,9 +16,9 @@ const Convo = ({showConvo, contact}) => {
         	})
       	})
             .then((res)=>res.json())
-             .then((data)=>
-               console.log(data)
-              )
+             .then((data)=>{
+ 										setIsOpened(false);
+                     })
  }
  	
 	return (
@@ -28,8 +27,8 @@ const Convo = ({showConvo, contact}) => {
 							{contact.messages.map((msg, i)=>( 
 							<>
 								{msg.from === 'me' 
-									? <p className="text-set right">{msg.message}</p> 
-									: <p className="text-set left">{msg.message}</p>
+									? <p className="text-set right" >{msg.message}</p> 
+									: <p className="text-set left" >{msg.message}</p>
 									}
 							</>))}
 						</div>

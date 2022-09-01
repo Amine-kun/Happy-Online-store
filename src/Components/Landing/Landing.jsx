@@ -35,6 +35,11 @@ const Landing =({activeBtn, setActiveBtn})=> {
    const [products, setProducts]=useState(null);
    const [spinner, setSpinner] = useState(true);
 
+   const scrollTo =()=> {
+       window.scrollTo(0, 650);
+        }
+
+
        useEffect(()=>{
             setSpinner(true);
 
@@ -126,7 +131,7 @@ const Landing =({activeBtn, setActiveBtn})=> {
                                     styles to help you stay updated with new 
                                     trends
                                   </p>
-                                  <button className="text shop-btn">
+                                  <button className="text shop-btn" onClick={()=>scrollTo()}>
                                     Discover Now
                                   </button>             
             </div>
@@ -139,7 +144,7 @@ const Landing =({activeBtn, setActiveBtn})=> {
                                     styles to help you stay updated with new 
                                     trends
                                   </p>
-                                  <button className="text shop-btn" >
+                                  <button className="text shop-btn"  onClick={()=>scrollTo()}>
                                     Discover Now
                                   </button>             
             </div>
