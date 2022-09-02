@@ -18,10 +18,6 @@ const Profile =()=> {
     const [userFeedbacks, setUserFeedbacks]=useState(null);
     const [userContacts, setUserContacts]=useState(null);
 
-    const userInfo = localStorage.getItem('Ecom-user') !== 'undefined'
-                 ? JSON.parse (localStorage.getItem('Ecom-user'))
-                  : localStorage.clear();
-
     const loadUserData =(userId, path)=>{
         fetch(`http://localhost:3001/user/${path}/${userId}`,{
               method:'get',

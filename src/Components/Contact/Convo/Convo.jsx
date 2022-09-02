@@ -1,25 +1,36 @@
 import React, {useState} from 'react';
 import './Convo.css';
+import socketClient  from "socket.io-client";
 
 const Convo = ({showConvo, contact, setIsOpened}) => {
 
+	const userInfo = localStorage.getItem('Ecom-user') !== 'undefined'
+                 ? JSON.parse (localStorage.getItem('Ecom-user'))
+                  : localStorage.clear();
+
 	const [message, setMessage] = useState(null);
+	const [channel, setChannel] = useState({id:userInfo._id, name:userInfo.name})
+	const socket = socketClient('http://localhost:4000');
 	
 	const sendMessage = () =>{
 
-		 fetch('http://localhost:3001/user/conversation',{
-              method:'post',
-              headers:{'Content-Type': 'application/json'},
-              body: JSON.stringify({
-                message:message,
-                convoId:contact._id,
-        	})
-      	})
-            .then((res)=>res.json())
-             .then((data)=>{
- 										setIsOpened(false);
-                     })
+		 // fetch('http://localhost:3001/user/conversation',{
+   //            method:'post',
+   //            headers:{'Content-Type': 'application/json'},
+   //            body: JSON.stringify({
+   //              message:message,
+   //              convoId:contact._id,
+   //      	})
+   //    	})
+   //          .then((res)=>res.json())
+   //           .then((data)=>{
+ 		// 								setIsOpened(false);
+   //                   })
  }
+
+			 socket.on('connection', () => {
+			    console.log("hii")
+			})
  	
 	return (
 		<div className={`convo__section ${showConvo && 'active__convo'}`}>
