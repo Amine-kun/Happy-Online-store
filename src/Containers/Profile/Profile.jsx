@@ -98,13 +98,20 @@ if (!user) return <Spinner/>
                               ))}
           </div>}
 
-        {currentTab === "Contact"  && 
+        {/*{currentTab === "Contact"  && 
          <div className="user-contacts">
             {!userContacts ? <Spinner/>
                             : userContacts.map((userContact)=>(
                                     <Contact contact={userContact} key={userContact._id}/>
                               ))}
-          </div>}
+          </div>}*/}
+
+          {currentTab === "Contact" && 
+            <>
+                {!userContacts ? <Spinner/>
+                               : <Contact contact={userContacts}/>}
+            </>
+             }
 
     </div>
   );

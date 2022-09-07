@@ -6,8 +6,11 @@ import Convo from './Convo/Convo';
 const Contact = ({contact}) => {
 
 	const [spinner, setSpinner] = useState(false);
+
 	const [isOpened, setIsOpened] = useState(false);
 	const [showConvo, setShowConvo] = useState(false);
+	const [chat, setChat] = useState(null);
+
 	const [newFriend, setNewFriend] = useState(null);
 	const [initialMessage, setInitialMessage] = useState(null);
 
@@ -28,7 +31,10 @@ const Contact = ({contact}) => {
 						              headers:{'Content-Type': 'application/json'},
 						              body: JSON.stringify({
 						              	initialMessage:{
-						              		time:"20:00pm",
+						              		time: 
+											  new Date(Date.now()).getHours() 
+											  + ":" 
+											  + new Date(Date.now()).getMinutes(),
 						              		message:initialMessage,
 						              	},
 						              	newFriend:newFriend,
@@ -43,6 +49,11 @@ const Contact = ({contact}) => {
 					          	   .then((res)=>res.json())
 
 	}
+
+	const chatFunctions = (singleContact) =>{
+			setIsOpened(true);
+			setChat(singleContact._id);
+	}
 	
 	if (spinner) return <Spinner/>
 
@@ -52,13 +63,16 @@ const Contact = ({contact}) => {
 
 				{!isOpened && 
 					<>
-						<div className="user_convo pointer" onClick={()=>setIsOpened(true)}>
-							<img src={userInfo._id === contact.from.userId ? contact.to.userImage : contact.from.userImage} className="sender-p" alt="userp"/>
-								<span className="name-msg">
-									<h4 className="text-set">{userInfo._id === contact.from.userId ? contact.to.userName : contact.from.userName}</h4>
-									<p className="text-set message">yoooooooo dude whatsupp, been ...</p>
-								</span>
-						</div>
+						{contact.map((singleContact, i) => 
+							<div className="user_convo pointer" onClick={()=>chatFunctions(singleContact)} key={i}>
+								<img src={userInfo._id === singleContact.from.userId ? singleContact.to.userImage : singleContact.from.userImage} className="sender-p" alt="userp"/>
+									<span className="name-msg">
+										<h4 className="text-set">{userInfo._id === singleContact.from.userId ? singleContact.to.userName : singleContact.from.userName}</h4>
+										<p className="text-set message">Click to see the Chat</p>
+									</span>
+							</div>
+							)}
+
 						<div>
 							<input type="text" placeholder="add a friend" onChange={(e)=>setNewFriend(e.target.value)}/>
 							<button onClick={()=> submitContact()}>Add</button>
@@ -68,7 +82,7 @@ const Contact = ({contact}) => {
 				}
 
 				{isOpened && 
-					<Convo showConvo={showConvo} contact={contact} setIsOpened={setIsOpened} userInfo={userInfo}/>
+					<Convo showConvo={showConvo} chat={chat} setIsOpened={setIsOpened} userInfo={userInfo}/>
 				}
 				
 			</div>
