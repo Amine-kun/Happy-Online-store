@@ -1,11 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import './Convo.css';
+import Spinner from '../../Spinner/Spinner';
 
 import { io }  from "socket.io-client";
 
 const Convo = ({showConvo, chat, setIsOpened, userInfo}) => {
 	const [message, setMessage] = useState(null);
 	const [messages, setMessages] = useState(null);
+	const [spinner, setSpinner] = useState(true);
+	
 	const socket = io('http://localhost:3001');
 
 			useEffect(() => {
@@ -18,6 +21,7 @@ const Convo = ({showConvo, chat, setIsOpened, userInfo}) => {
 		            .then((res)=>res.json())
 		             .then((data)=>{
 		 					setMessages(data.messages);
+							setSpinner(false);
 		                     })
 					
 			}, [])
@@ -26,24 +30,20 @@ const Convo = ({showConvo, chat, setIsOpened, userInfo}) => {
 				 socket.on('receive_message', (data) => {
 				   setMessages((prev) => [...prev, data])
 				});
-
-				 // return () => {
-				 // 		socket.disconnect();
-				 // 	};
-
 			}, [])
 	
 
 				const sendMessage = async () =>{
+					const getTime = new Date(Date.now()).getHours() 
+									+ ":" 
+									+ new Date(Date.now()).getMinutes();
+
 					const messageData =  {channel:chat,
 										  message:message, 
 										  source:{
 											     userId:userInfo._id, 
 												 userName:userInfo.name}, 
-										   time: 
-											   new Date(Date.now()).getHours() 
-											   + ":" 
-											   + new Date(Date.now()).getMinutes(),
+										   time: getTime,
 										   };
 
 
@@ -57,7 +57,7 @@ const Convo = ({showConvo, chat, setIsOpened, userInfo}) => {
 						              headers:{'Content-Type': 'application/json'},
 						              body: JSON.stringify({
 						              	convoId: chat,
-						              	time:"20:00pm",
+						              	time: getTime,
 						              	message:message,
 						              	source:{
 						              		userId:userInfo._id,
@@ -69,26 +69,36 @@ const Convo = ({showConvo, chat, setIsOpened, userInfo}) => {
 
 					          	   .then((res)=>res.json())
 						             .then((data)=>{
-						 										console.log(data)
+						 				console.log(data)
 						                     })
 								}
 			 }
  	
+	
+	if (spinner) return <Spinner/>
+
 	return (
 		<div className={`convo__section ${showConvo && 'active__convo'}`}>
 						<div className="msgs">
 							{messages?.map((msg, i)=>( 
 							<>
 								{msg.source.userId === userInfo._id
-									? <p className="text-set right" >{msg.message}</p> 
-									: <p className="text-set left" >{msg.message}</p>
+									? <span className="right">
+											<p className="text-set msg__comp" >{msg.message}</p>
+											<p className="text-set time">{msg.time}</p>
+										</span>
+									: <span className="left">
+											<img src={msg.source.userImage} className="sender" alt="contacter"/>
+											<p className="text-set msg__comp" >{msg.message}</p>
+											<p className="text-set time">{msg.time}</p>
+									  </span>
 									}
 							</>))}
 						</div>
 
-						<div>
-							<input type="text" placeholder="Send a message..." onChange={(e)=>setMessage(e.target.value)}/>
-							<button onClick={()=>sendMessage()}>Send</button>
+						<div className="chat__inputs">
+							<input className="chat__input" type="text" placeholder="Send a message..." onChange={(e)=>setMessage(e.target.value)}/>
+							<button className="chat__btn" onClick={()=>sendMessage()}>Send</button>
 						</div>
 
 		</div>

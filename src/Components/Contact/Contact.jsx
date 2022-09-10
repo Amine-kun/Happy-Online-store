@@ -63,21 +63,30 @@ const Contact = ({contact}) => {
 
 				{!isOpened && 
 					<>
-						{contact.map((singleContact, i) => 
-							<div className="user_convo pointer" onClick={()=>chatFunctions(singleContact)} key={i}>
-								<img src={userInfo._id === singleContact.from.userId ? singleContact.to.userImage : singleContact.from.userImage} className="sender-p" alt="userp"/>
-									<span className="name-msg">
-										<h4 className="text-set">{userInfo._id === singleContact.from.userId ? singleContact.to.userName : singleContact.from.userName}</h4>
-										<p className="text-set message">Click to see the Chat</p>
-									</span>
-							</div>
-							)}
+						{!contact.length ? <div className="user-items">
+                                      		  <p className="Boldtext" style={{color:"grey"}}>You have no Feedbacks at the moment</p>
+                                	     </div>
 
-						<div>
-							<input type="text" placeholder="add a friend" onChange={(e)=>setNewFriend(e.target.value)}/>
-							<button onClick={()=> submitContact()}>Add</button>
+                                     : contact.map((singleContact, i) => 
+											<div className="user_convo pointer" onClick={()=>chatFunctions(singleContact)} key={i}>
+												<img src={userInfo._id === singleContact.from.userId ? singleContact.to.userImage : singleContact.from.userImage} 
+												className="sender-p" alt="userp"/>
+
+													<span className="name-msg">
+														<h4 className="text-set">
+															{userInfo._id === singleContact.from.userId ? singleContact.to.userName : singleContact.from.userName}
+														</h4>
+														<p className="text-set message">Click to see the Chat</p>
+													</span>
+													
+											</div>
+											)}
+
+						<div className="add">
+							<input className="add__input" type="text" placeholder="add a friend" onChange={(e)=>setNewFriend(e.target.value)}/>
+							<button onClick={()=> submitContact()} className="add__btn">Add</button>
 						</div>
-							<input type="text" placeholder="your message" onChange={(e)=>setInitialMessage(e.target.value)}/>
+							<input type="text"  className="add__input" style={{width:"80%"}} placeholder="your message" onChange={(e)=>setInitialMessage(e.target.value)}/>
 					</>
 				}
 

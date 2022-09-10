@@ -84,32 +84,28 @@ if (!user) return <Spinner/>
 
        {currentTab === "Products"  && 
          <div className="user-items">
-            {!userProducts ? <Spinner/>
-                            : userProducts.map((userProduct)=>(
+            {!userProducts && <Spinner/>}
+            {!userProducts?.length ? <p className="Boldtext" style={{color:"grey"}}>You have no products at the moment</p>
+                                 : userProducts.map((userProduct)=>(
                                     <Products product={userProduct} key={userProduct._id}/>
-                              ))}
+                                     )) }
           </div>}
 
         {currentTab === "Feedbacks"  && 
          <div className="user-feedbacks">
-            {!userFeedbacks ? <Spinner/>
+            {!userProducts && <Spinner/>}
+            {!userFeedbacks?.length ? <div className="user-items">
+                                        <p className="Boldtext" style={{color:"grey"}}>You have no Feedbacks at the moment</p>
+                                     </div>
                             : userFeedbacks.map((userFeedback)=>(
                                     <Feedbacks feedback={userFeedback} key={userFeedback._id}/>
                               ))}
           </div>}
 
-        {/*{currentTab === "Contact"  && 
-         <div className="user-contacts">
-            {!userContacts ? <Spinner/>
-                            : userContacts.map((userContact)=>(
-                                    <Contact contact={userContact} key={userContact._id}/>
-                              ))}
-          </div>}*/}
-
           {currentTab === "Contact" && 
             <>
-                {!userContacts ? <Spinner/>
-                               : <Contact contact={userContacts}/>}
+                {!userProducts && <Spinner/>}
+                {userContacts && <Contact contact={userContacts}/>}
             </>
              }
 

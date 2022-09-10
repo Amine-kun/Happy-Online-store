@@ -40,7 +40,30 @@
 .message{
 	color: grey;
 }
+.add{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-top: 30px;
+}
 
+.add__input{
+	padding: 0.5rem 1rem;
+	border: 2px solid #232323;
+	width: 60%;
+}
+.add__btn{
+	background-color: #232323;
+	font-weight: bold;
+	color: #f5f5f5;
+	padding: 0.6rem 1rem;
+	width: 18%;
+	align-self: flex-end;
+	margin-left: 10px;
+	border: none;
+}
 @media screen and (max-width: 1000px){
 	.users__container{
 		width: 95%;
