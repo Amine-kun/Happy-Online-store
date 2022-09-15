@@ -9,6 +9,7 @@
 	overflow-y: scroll;
 }
 .users__container{
+		position: relative;
 	background-color: #f6f7fb;
 	width: 60%;
 	height: 100%;

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import './Convo.css';
 import Spinner from '../../Spinner/Spinner';
 
@@ -8,6 +8,8 @@ const Convo = ({showConvo, chat, setIsOpened, userInfo}) => {
 	const [message, setMessage] = useState(null);
 	const [messages, setMessages] = useState(null);
 	const [spinner, setSpinner] = useState(true);
+
+	const bottomRef = useRef();
 	
 	const socket = io('http://localhost:3001');
 
@@ -22,6 +24,7 @@ const Convo = ({showConvo, chat, setIsOpened, userInfo}) => {
 		             .then((data)=>{
 		 					setMessages(data.messages);
 							setSpinner(false);
+							bottomRef.current?.scrollIntoView({behavior:"smooth"})
 		                     })
 					
 			}, [])
@@ -41,7 +44,8 @@ const Convo = ({showConvo, chat, setIsOpened, userInfo}) => {
 					const messageData =  {channel:chat,
 										  message:message, 
 										  source:{
-											     userId:userInfo._id, 
+											     userId:userInfo._id,
+											     userImage:userInfo.userImage,
 												 userName:userInfo.name}, 
 										   time: getTime,
 										   };
@@ -69,7 +73,8 @@ const Convo = ({showConvo, chat, setIsOpened, userInfo}) => {
 
 					          	   .then((res)=>res.json())
 						             .then((data)=>{
-						 				console.log(data)
+						 				setMessage('');
+						 				bottomRef.current?.scrollIntoView({behavior:"smooth"})
 						                     })
 								}
 			 }
@@ -94,10 +99,11 @@ const Convo = ({showConvo, chat, setIsOpened, userInfo}) => {
 									  </span>
 									}
 							</>))}
+								<div className="ref-div" ref={bottomRef}></div>
 						</div>
 
 						<div className="chat__inputs">
-							<input className="chat__input" type="text" placeholder="Send a message..." onChange={(e)=>setMessage(e.target.value)}/>
+							<input className="chat__input" type="text" value={message}placeholder="Send a message..." onChange={(e)=>setMessage(e.target.value)}/>
 							<button className="chat__btn" onClick={()=>sendMessage()}>Send</button>
 						</div>
 
