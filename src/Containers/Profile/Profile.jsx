@@ -19,7 +19,7 @@ const Profile =()=> {
     const [userContacts, setUserContacts]=useState(null);
 
     const loadUserData =(userId, path)=>{
-        fetch(`http://localhost:3001/user/${path}/${userId}`,{
+        fetch(`https://happy-store-backend.herokuapp.com/user/${path}/${userId}`,{
               method:'get',
               headers:{'Content-Type': 'application/json'},
             })
@@ -38,7 +38,7 @@ const Profile =()=> {
     }      
 
     useEffect(()=>{
-      fetch(`http://localhost:3001/user/${userId}`,{
+      fetch(`https://happy-store-backend.herokuapp.com/user/${userId}`,{
               method:'get',
               headers:{'Content-Type': 'application/json'},
             })

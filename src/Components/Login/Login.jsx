@@ -13,7 +13,7 @@ const Login =()=> {
   const getUser = () => {
       setSpinner(true);
 
-      fetch('http://localhost:3001/login',{
+      fetch('https://happy-store-backend.herokuapp.com/login',{
           method:'post',
           headers:{'Content-Type': 'application/json'},
           body: JSON.stringify({

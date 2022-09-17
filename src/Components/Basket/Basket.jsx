@@ -25,7 +25,7 @@ const Basket =( {toggleBasket ,setToggleBasket} )=> {
   useEffect(()=>{
         setSpinner(true);
 
-      fetch(`http://localhost:3001/cart/${userInfo._id}`,{
+      fetch(`https://happy-store-backend.herokuapp.com/cart/${userInfo._id}`,{
               method:'get',
               headers:{'Content-Type': 'application/json'},
         })
@@ -70,7 +70,7 @@ const Basket =( {toggleBasket ,setToggleBasket} )=> {
     useEffect(()=>{
 
           const stripeRequest = ()=>{
-                    fetch('http://localhost:3001/checkout',{
+                    fetch('https://happy-store-backend.herokuapp.com/checkout',{
                         method:'post',
                         headers:{'Content-Type': 'application/json'},
                         body: JSON.stringify({

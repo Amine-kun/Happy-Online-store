@@ -22,7 +22,7 @@ const userInfo = localStorage.getItem('Ecom-user') !== 'undefined'
  useEffect(()=>{
   setLoading(true);
 
-    fetch(`http://localhost:3001/wishlist/${userInfo._id}`, {
+    fetch(`https://happy-store-backend.herokuapp.com/wishlist/${userInfo._id}`, {
               method:'get',
               headers:{'Content-Type': 'application/json'},
     })

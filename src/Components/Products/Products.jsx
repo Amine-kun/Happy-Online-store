@@ -27,7 +27,7 @@ const Products =({product})=> {
         const addToCart = (cartProduct) =>{
             const {_id, productName, price, productImage, category} = cartProduct;
 
-            fetch('http://localhost:3001/cart',{
+            fetch('https://happy-store-backend.herokuapp.com/cart',{
               method:'post',
               headers:{'Content-Type': 'application/json'},
               body: JSON.stringify({
@@ -49,7 +49,7 @@ const Products =({product})=> {
       const addToWishList = (wishlistProduct) =>{
             const {_id, productName, price, productImage, category} = wishlistProduct;
 
-            fetch('http://localhost:3001/wishlist',{
+            fetch('https://happy-store-backend.herokuapp.com/wishlist',{
               method:'post',
               headers:{'Content-Type': 'application/json'},
               body: JSON.stringify({
@@ -69,7 +69,7 @@ const Products =({product})=> {
 
       const deleteItem=(selectedProduct)=>{
  
-          fetch(`http://localhost:3001/product/${selectedProduct._id}`,{
+          fetch(`https://happy-store-backend.herokuapp.com/product/${selectedProduct._id}`,{
                     method:'delete',
                     headers:{'Content-Type': 'application/json'},
               })

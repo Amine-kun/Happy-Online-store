@@ -43,7 +43,7 @@ const Landing =({activeBtn, setActiveBtn})=> {
        useEffect(()=>{
             setSpinner(true);
 
-              fetch('http://localhost:3001/',{
+              fetch('https://happy-store-backend.herokuapp.com/',{
               method:'post',
               headers:{'Content-Type': 'application/json'},
               body: JSON.stringify({

@@ -26,7 +26,7 @@ const Contact = ({contact}) => {
 
 	const submitContact = () => {
 
-		fetch(`http://localhost:3001/user/Contact`,{
+		fetch(`https://happy-store-backend.herokuapp.com/user/Contact`,{
 						              method:'post',
 						              headers:{'Content-Type': 'application/json'},
 						              body: JSON.stringify({

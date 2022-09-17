@@ -33,7 +33,7 @@ const ProductDetails =()=> {
                   : localStorage.clear();
 
       useEffect(()=>{
-          fetch(`http://localhost:3001/Product/${ProductId}`,{
+          fetch(`https://happy-store-backend.herokuapp.com/${ProductId}`,{
               method:'get',
               headers:{'Content-Type': 'application/json'},
             })
@@ -48,7 +48,7 @@ const ProductDetails =()=> {
             if (userInfo){
               const {_id, productName, price, productImage, category} = cartProduct;
 
-            fetch('http://localhost:3001/cart',{
+            fetch('https://happy-store-backend.herokuapp.com/cart',{
               method:'post',
               headers:{'Content-Type': 'application/json'},
               body: JSON.stringify({
@@ -73,7 +73,7 @@ const ProductDetails =()=> {
       const addToWishList = (wishlistProduct) =>{
             const {_id, productName, price, productImage, category} = wishlistProduct;
 
-            fetch('http://localhost:3001/wishlist',{
+            fetch('https://happy-store-backend.herokuapp.com/wishlist',{
               method:'post',
               headers:{'Content-Type': 'application/json'},
               body: JSON.stringify({
@@ -92,7 +92,7 @@ const ProductDetails =()=> {
       }
 
        const loadRelatedProducts = (data) =>{
-          fetch(`http://localhost:3001/RelatedProducts/${data}`,{
+          fetch(`https://happy-store-backend.herokuapp.com/RelatedProducts/${data}`,{
               method:'get',
               headers:{'Content-Type': 'application/json'},
             })

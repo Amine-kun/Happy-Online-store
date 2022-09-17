@@ -11,12 +11,12 @@ const Convo = ({showConvo, chat, setIsOpened, userInfo}) => {
 
 	const bottomRef = useRef();
 	
-	const socket = io('http://localhost:3001');
+	const socket = io('https://happy-store-backend.herokuapp.com/');
 
 			useEffect(() => {
 				socket.emit("join_chat", chat);
 
-				fetch(`http://localhost:3001/user/conversation/${chat}`,{
+				fetch(`https://happy-store-backend.herokuapp.com/user/conversation/${chat}`,{
 		              method:'get',
 		              headers:{'Content-Type': 'application/json'},
 		      	})

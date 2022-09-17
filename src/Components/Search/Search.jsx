@@ -16,7 +16,7 @@ const Search =({search, setSearch})=> {
       setSpinner(true);
 
       if (searchTerm){
-        fetch('http://localhost:3001/search',{
+        fetch('https://happy-store-backend.herokuapp.com/search',{
           method:'post',
           headers:{'Content-Type': 'application/json'},
           body: JSON.stringify({

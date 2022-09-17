@@ -38,7 +38,7 @@ const Upload =()=> {
         data.set('userId', userInfo._id);
         data.set('userImage', userInfo.userImage);
 
-         fetch('http://localhost:3001/upload', {
+         fetch('https://happy-store-backend.herokuapp.com/upload', {
           method:'post',
           body: data,
          }) 

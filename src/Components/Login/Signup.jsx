@@ -32,7 +32,7 @@ const Login =()=> {
         data.set("location", location);
         data.set("about", about);
 
-      fetch('http://localhost:3001/register',{
+      fetch('https://happy-store-backend.herokuapp.com/register',{
           method:'post',
           body: data,
         })
