@@ -64,7 +64,6 @@ const Products =({product})=> {
             .then((res)=>res.json())
               .then(()=>{ 
                dispatch(addProductToWishlist({quantity}));
-               console.log("added")
               })
       }
 

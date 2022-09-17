@@ -23,7 +23,6 @@ const Login =()=> {
         })
         .then(res=>res.json())
         .then(data =>{
-          console.log(data);
           if (data.name){
             localStorage.setItem('Ecom-user', JSON.stringify(data));
             navigate('/');

@@ -37,14 +37,13 @@ const Upload =()=> {
         data.set('userName', userInfo.name);
         data.set('userId', userInfo._id);
         data.set('userImage', userInfo.userImage);
-        console.log(productName,description,price,category,isColors,isSizes)
 
          fetch('http://localhost:3001/upload', {
           method:'post',
           body: data,
          }) 
             .then((res)=> res.json())
-            .then((data)=> console.log(data))
+            .then((data)=> console.log("successfully uploaded"))
    }
 
   return (
