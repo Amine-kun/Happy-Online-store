@@ -5,7 +5,7 @@ import Spinner from '../../Spinner/Spinner';
 import { io }  from "socket.io-client";
 
 const Convo = ({showConvo, chat, setIsOpened, userInfo}) => {
-	const [message, setMessage] = useState(null);
+	const [message, setMessage] = useState('');
 	const [messages, setMessages] = useState(null);
 	const [spinner, setSpinner] = useState(true);
 
