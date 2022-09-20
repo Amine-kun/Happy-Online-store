@@ -11,9 +11,7 @@ const Convo = ({showConvo, chat, setIsOpened, userInfo}) => {
 
 	const bottomRef = useRef();
 	
-	const socket = io('https://happy-store-backend.herokuapp.com/', {
-			  withCredentials: true
-			});
+	const socket = io('https://happy-store-backend.herokuapp.com');
 
 			useEffect(() => {
 				socket.emit("join_chat", chat);
@@ -35,7 +33,7 @@ const Convo = ({showConvo, chat, setIsOpened, userInfo}) => {
 				 socket.on('receive_message', (data) => {
 				   setMessages((prev) => [...prev, data])
 				});
-			}, [socket])
+			}, [])
 	
 
 				const sendMessage = async () =>{

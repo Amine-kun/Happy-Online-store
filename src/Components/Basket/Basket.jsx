@@ -70,7 +70,7 @@ const Basket =( {toggleBasket ,setToggleBasket} )=> {
     useEffect(()=>{
 
           const stripeRequest = ()=>{
-                    fetch('https://happy-store-backend.herokuapp.com/checkout',{
+                    fetch('http://localhost:3001/checkout',{
                         method:'post',
                         headers:{'Content-Type': 'application/json'},
                         body: JSON.stringify({

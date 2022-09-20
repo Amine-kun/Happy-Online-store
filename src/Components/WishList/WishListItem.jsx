@@ -32,7 +32,7 @@ const WishListItem =({SingleProduct, user ,setLoading, setProducts})=> {
         let quantity = 0;
             const {_id, productName, price, category, productImage} = product;
 
-            fetch('http://localhost:3001/cart',{
+            fetch('https://happy-store-backend.herokuapp.com/cart',{
               method:'post',
               headers:{'Content-Type': 'application/json'},
               body: JSON.stringify({

@@ -33,7 +33,7 @@ const ProductDetails =()=> {
                   : localStorage.clear();
 
       useEffect(()=>{
-          fetch(`https://happy-store-backend.herokuapp.com/${ProductId}`,{
+          fetch(`https://happy-store-backend.herokuapp.com/Product/${ProductId}`,{
               method:'get',
               headers:{'Content-Type': 'application/json'},
             })
