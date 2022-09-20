@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import './Navbar.css';
 import {RiSearch2Line} from 'react-icons/ri';
@@ -47,7 +47,7 @@ const Navbar =({toggleBasket ,setToggleBasket, search, setSearch, toggleMenu, se
           {userInfo 
               ? <div className="user-nav">
                   <Link to={`/user/${userInfo._id}`}>
-                    <img src={userInfo.userImage} className="userImage"/>
+                    <img src={userInfo.userImage} className="userImage" alt="user-picture"/>
                   </Link>
                 </div>
               :<div className="login-btns">

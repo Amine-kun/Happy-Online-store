@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect} from 'react';
+import React from 'react';
 import './Sidebar.css';
 import {useNavigate} from 'react-router-dom';
 import {useSelector} from 'react-redux';

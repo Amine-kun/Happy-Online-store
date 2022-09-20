@@ -5,8 +5,6 @@ import Convo from './Convo/Convo';
 
 const Contact = ({contact}) => {
 
-	const [spinner, setSpinner] = useState(false);
-
 	const [isOpened, setIsOpened] = useState(false);
 	const [showConvo, setShowConvo] = useState(false);
 	const [chat, setChat] = useState(null);
@@ -54,8 +52,6 @@ const Contact = ({contact}) => {
 			setIsOpened(true);
 			setChat(singleContact._id);
 	}
-	
-	if (spinner) return <Spinner/>
 
 	return (
 		<div className="contact__container">

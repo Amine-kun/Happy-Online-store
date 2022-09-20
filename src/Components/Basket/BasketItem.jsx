@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import './Basket.css';
 
 const BasketItem =({items, setSpinner, setItems, countTotal})=> {       
@@ -6,7 +6,7 @@ const BasketItem =({items, setSpinner, setItems, countTotal})=> {
      const deleteItem=(info)=>{
           setSpinner(true);
 
-          fetch(`http://localhost:3001/cart?itemid=${info.id}&userid=${info.By}`,{
+          fetch(`https://happy-store-backend.herokuapp.com/cart?itemid=${info.id}&userid=${info.By}`,{
                     method:'delete',
                     headers:{'Content-Type': 'application/json'},
               })

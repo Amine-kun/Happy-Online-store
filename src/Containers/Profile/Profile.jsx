@@ -105,7 +105,10 @@ if (!user) return <Spinner/>
           {currentTab === "Contact" && 
             <>
                 {!userProducts && <Spinner/>}
-                {userContacts && <Contact contact={userContacts}/>}
+                {!userContacts?.length ? <div className="user-items">
+                                        <p className="Boldtext" style={{color:"grey"}}>You have no Contacts at the moment</p>
+                                     </div>
+                            : <Contact contact={userContacts}/>}
             </>
              }
 

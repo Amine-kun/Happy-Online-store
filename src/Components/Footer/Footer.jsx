@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './Footer.css';
 import {FaLinkedin,FaInstagramSquare, FaFacebookSquare, FaGithubSquare, FaCcPaypal, FaCcMastercard, FaCcVisa} from 'react-icons/fa'
 

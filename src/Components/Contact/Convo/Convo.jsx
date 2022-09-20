@@ -35,7 +35,7 @@ const Convo = ({showConvo, chat, setIsOpened, userInfo}) => {
 				 socket.on('receive_message', (data) => {
 				   setMessages((prev) => [...prev, data])
 				});
-			}, [])
+			}, [socket])
 	
 
 				const sendMessage = async () =>{
@@ -58,7 +58,7 @@ const Convo = ({showConvo, chat, setIsOpened, userInfo}) => {
 					} else {
 							await socket.emit("send_message", messageData);
 
-							fetch(`http://localhost:3001/user/conversation`,{
+							fetch(`https://happy-store-backend.herokuapp.com/user/conversation`,{
 						              method:'post',
 						              headers:{'Content-Type': 'application/json'},
 						              body: JSON.stringify({

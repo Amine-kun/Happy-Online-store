@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {useNavigate} from 'react-router-dom';
 import './WishList.css';
 
@@ -17,7 +17,7 @@ const WishListItem =({SingleProduct, user ,setLoading, setProducts})=> {
       const deleteItem = (info)=>{
         setLoading(true);
 
-          fetch(`http://localhost:3001/wishlist?itemid=${info.id}&userid=${info.By}`,{
+          fetch(`https://happy-store-backend.herokuapp.com/wishlist?itemid=${info.id}&userid=${info.By}`,{
                     method:'delete',
                     headers:{'Content-Type': 'application/json'},
               })
@@ -54,7 +54,7 @@ const WishListItem =({SingleProduct, user ,setLoading, setProducts})=> {
   return (
            <div className="wishlist-product pointer">
 
-              <img src={SingleProduct.productImage} className="wishlist-product-img"/>
+              <img src={SingleProduct.productImage} className="wishlist-product-img" alt="product-pic"/>
               <div className="product-details">
                 <p className="text-set product-title">{SingleProduct.productName}</p>
                 <p>{SingleProduct.category}</p>

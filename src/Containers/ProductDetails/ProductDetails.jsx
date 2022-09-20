@@ -120,7 +120,7 @@ const ProductDetails =()=> {
 
                 <div className="ProductDetails-div">
                   <div className="image-side">  
-                      <img className="ProductDetails-img" src={productDetails.productImage}/>
+                      <img className="ProductDetails-img" src={productDetails.productImage} alt="product-img"/>
                   </div>
 
                   <div className="details-side">
@@ -181,10 +181,6 @@ const ProductDetails =()=> {
                       </div>
 
                 </div>
-
-               {/* <div className="reviews-section"> 
-                    <p>Recent Reviews</p>
-                </div>*/}
               </div>
             );
 }

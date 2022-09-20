@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './Sidebar.css';
 
 import {IoMdWatch} from 'react-icons/io';

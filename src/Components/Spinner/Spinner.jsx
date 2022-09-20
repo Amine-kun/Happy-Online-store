@@ -1,5 +1,4 @@
-import React, {useState, useEffect} from 'react';
-import { useNavigate} from 'react-router-dom';
+import React from 'react';
 import './Spinner.css';
 import {ImSpinner8} from 'react-icons/im';
 

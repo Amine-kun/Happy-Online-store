@@ -16,7 +16,6 @@ const Products =({product})=> {
         const navigate=useNavigate();
         const currentQuantity = useSelector(state=>state.cart.quantity);
         
-        const [activeBtn, setActiveBtn] = useState('');
         const [hoveredProduct, setHoveredProduct] = useState(false);
         const [quantity, setQuantity] = useState(0);
 
@@ -86,7 +85,7 @@ const Products =({product})=> {
                       onMouseEnter={()=>setHoveredProduct(true)}
                       onMouseLeave={()=>setHoveredProduct(false)}
                       onClick={()=>navigate(`/Product/${product?._id}`)}>
-                            <img src={product?.productImage} className="product" key={Math.random()}/>
+                            <img src={product?.productImage} className="product" key={Math.random()} alt="product-pic"/>
                               {hoveredProduct && (
                                               <div className="up-product">
                                                 <p className="title-product">{product?.productName}</p>

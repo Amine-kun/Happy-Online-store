@@ -16,7 +16,6 @@ const Upload =()=> {
   const [isColors, setIsColors] = useState(false);
   const [isSizes, setIsSizes] = useState(false);
 
-  const [success, setSuccess] = useState(false);
 
    const userInfo = localStorage.getItem('Ecom-user') !== 'undefined'
                  ? JSON.parse (localStorage.getItem('Ecom-user'))
@@ -56,7 +55,7 @@ const Upload =()=> {
                         <AiOutlineCloudUpload/>
                         <input type="file" name="file" className="file"  onChange={(e)=>setImage(e.target.files[0])}/>
                       </> 
-                      : <img src={URL.createObjectURL(image)} className="product-pic"/> }
+                      : <img src={URL.createObjectURL(image)} className="product-pic" alt="img"/> }
              </label>
              <input type="text" name="productName" className="input" placeholder="Product name" onChange={(e)=>setProductName(e.target.value)}/>
              <input type="text" name="description" className="input" placeholder="About the product" onChange={(e)=>setDescription(e.target.value)}/>
