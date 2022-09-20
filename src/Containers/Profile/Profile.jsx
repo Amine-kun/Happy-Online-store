@@ -6,6 +6,7 @@ import Products from '../../Components/Products/Products';
 import Spinner from '../../Components/Spinner/Spinner';
 import Contact from '../../Components/Contact/Contact';
 import Feedbacks from '../../Components/Feedbacks/Feedbacks';
+import walp from '../../../public/assets/walp.jpg';
 
 
 const Profile =()=> {      
@@ -62,7 +63,7 @@ if (!user) return <Spinner/>
   return (
     <div className="profile-main">
       <div className="user-info">
-        <img src="http://localhost:3000/assets/noxus.jpg" className="cover" alt="cover"/>
+        <img src={walp} className="cover" alt="cover"/>
         <img src={user.userImage} className="user-pp" alt="userpp"/>
           <div className="user-more-info">
               <p className="username">{user.name}</p>
