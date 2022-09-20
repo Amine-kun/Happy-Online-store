@@ -6,7 +6,7 @@ import Products from '../../Components/Products/Products';
 import Spinner from '../../Components/Spinner/Spinner';
 import Contact from '../../Components/Contact/Contact';
 import Feedbacks from '../../Components/Feedbacks/Feedbacks';
-import walp from '../../../public/assets/walp.jpg';
+import walp from './walp.jpg';
 
 
 const Profile =()=> {      
